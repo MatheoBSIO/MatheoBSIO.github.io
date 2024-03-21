@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Stage BesTT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-face.css">
+    <link rel="stylesheet" href="css/color-schemes/dark/hot-pink.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script>
+        document.cookie = 'resolution=' + Math.max(screen.width, screen.height) + ("devicePixelRatio" in window ? "," + devicePixelRatio : ",1") + '; path=/';
+    </script><!-- Responsive images -->
+</head>
+<body>
+
+<div class="top-ribbon"></div>
+
+<div class="single-work">
+    <div class="home"><a href="index.html"><i class="icon-home"></i></a></div>
+    <div class="backward"><a href="gallery-hex.html"><i class="icon-backward"></i></a></div>
+
+    <article class="image">
+        <img id="mainImage" src="img/ScreenProjstage1.png" alt="">
+		<img id="mainImage2" src="" alt="">
+		<img id="mainImage3" src="" alt="">
+		<img id="mainImage4" src="" alt="">
+    </article>
+
+    <aside class="description">
+        <header>
+            <h1 class="entry-title-font">Stage en Entreprise <a href='https://logiciel-interim.com/'>(BesTT)</a></h1>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('tab1')">Correction Facture</button>
+            <button class="tab-btn" onclick="showTab('tab2')">Import Fichier --> BDD </button>
+            <button class="tab-btn" onclick="showTab('tab3')">Import Excel --> BDD</button>
+            <button class="tab-btn" onclick="showTab('tab4')">Filtre Date Facturation</button>
+        </div>
+
+        <div class="tab-content" id="tab1">
+            <div class="content">
+                <p>Réalisation d'un programme à envoyer a un client pour corriger un probleme sur les calculs des factures</p>
+                <p>Langages utilisés : SQL | Wlangage</p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab2" style="display: none;">
+            <div class="content">
+                <p>Réalisation d'un programme d'importation de fichier dans la base de donnée pour un client</p>
+				<p>Langages utilisés : SQL | Wlangage</p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab3" style="display: none;">
+            <div class="content">
+                <p>Réalisation d'un programme d'importation permettant d'importer les donnée d'un fichier excel sur une base de donneé</p>
+				<p>Langages utilisés : SQL | Wlangage</p>
+            </div>
+        </div>
+        <div class="tab-content" id="tab4" style="display: none;">
+            <div class="content">
+                <p></p>
+                <p>Langages utilisés : SQL | Wlangage</p>
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </aside>
+
+</div>
+
+<footer class="site-footer site-footer-font">
+    <div class="separator"></div>
+    <div class="contact">
+        <a href="mailto:matheoburahlycee@gmail.com"><i class="icon-envelope-alt"></i> matheoburahlycee@gmail.com</a> &middot;
+        <a href="tel:06-12-92-86-33"><i class="icon-phone"></i> 06 12 92 86 33</a> &middot;
+    </div>
+</footer>
+
+<script>
+    function showTab(tabId) {
+        // Masquer tous les contenus des onglets
+        var tabs = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = 'none';
+        }
+
+        // Désactiver tous les boutons d'onglets
+        var tabBtns = document.getElementsByClassName('tab-btn');
+        for (var i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove('active');
+        }
+
+        // Afficher le contenu de l'onglet sélectionné
+        document.getElementById(tabId).style.display = 'block';
+
+        // Activer le bouton d'onglet sélectionné
+        event.currentTarget.classList.add('active');
+
+        // Mettre à jour l'image en fonction de l'onglet sélectionné
+        updateImage(tabId);
+    }
+
+    function updateImage(tabId) {
+        var mainImage = document.getElementById('mainImage');
+
+        switch (tabId) {
+            case 'tab1':
+                mainImage.src = 'img/ScreenProjstage1.png';
+				mainImage2.src = '';
+				mainImage3.src = '';
+				mainImage4.src = '';
+                break;
+            case 'tab2':
+                mainImage.src = 'img/ImageProjStage2_ (2).png';
+				mainImage2.src = 'img/ImageProjStage2_ (3).png';
+				mainImage3.src = 'img/ImageProjStage2_ (4).png';
+				mainImage4.src = 'img/ImageProjStage2_ (1).png';
+                break;
+            case 'tab3':
+                mainImage.src = 'img/ScreenProjstage3.png';
+                mainImage2.src = '';
+                mainImage3.src = '';
+                mainImage4.src = '';
+                break;
+            case 'tab4':
+                mainImage.src = 'img/ScreenProjStage4 (2).png';
+                mainImage2.src = 'img/ScreenProjStage4 (3).png';
+                mainImage3.src = 'img/ScreenProjStage4 (4).png';
+                mainImage4.src = '';
+        }
+    }
+</script>
+</body>
+</html>
