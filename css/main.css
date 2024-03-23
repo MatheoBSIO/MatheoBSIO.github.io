@@ -987,4 +987,8 @@ nav li:hover {
 	transition: background-color 0.5s ease;
   }
 
+  .centered-content {
+	margin-left: 20px; /* Ajustez cette valeur selon vos préférences */
+}
+
   
